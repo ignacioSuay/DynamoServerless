@@ -10,7 +10,7 @@ function buildResponse(code, item) {
     };
 }
 
-module.exports.getPerson = (event, context, callback) => {
+module.exports.getPerson = function (event, context, callback) {
 
     console.log("running lambda");
     const ddb = new AWS.DynamoDB();
@@ -22,13 +22,13 @@ module.exports.getPerson = (event, context, callback) => {
         }
     };
 
-    ddb.getItem(params, function (err, data) {
+    ddb.getItem(params, (err, data) => {
         if (err) {
             console.log(err);
             callback(error, buildResponse(500, err));
         }
 
-        callback(error, buildResponse(200, data.Item));
+        callback(null, buildResponse(200, data.Item));
     });
 
 };
