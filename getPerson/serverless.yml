@@ -69,7 +69,7 @@ functions:
 #    Check the event documentation for details
     events:
       - http:
-          path: person2/{id}
+          path: person/{id}
           method: get
           cors: true
 #      - s3: ${env:BUCKET}
