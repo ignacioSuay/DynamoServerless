@@ -17,7 +17,7 @@ test('test getPeson should return a person', function () {
         console.log(data);
         const body = JSON.parse(data.body)
 
-        expect(body.id).toBe('1');
+        expect(body.id).toBe('2');
         expect(body.name).toBe('Ignacio');
         expect(body.lastName).toBe('Suay');
     });
